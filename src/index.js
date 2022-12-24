@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
+import App from './app';
 
-class Quiz extends React.Component {
- render()
- {
- return <div>hello</div>
- }
-
-
-}
-
+const store = configureStore({
+    reducer: {},
+})
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Quiz/>);
+root.render(
+    <Provider store={store}>
+        <App />
+    </Provider>
+);
